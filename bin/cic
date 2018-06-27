@@ -1,0 +1,19 @@
+#!/usr/bin/env node
+
+// 呪い
+"use strict";
+
+var program = require("commander");
+
+// -n <name > --name <name>オプションを作成
+program.option("-n, --name <name>", "name");
+ 
+//引数をよみとる
+program.parse(process.argv);
+
+if (typeof program.name === "string") {
+    //name が指定されていればその人に挨拶
+    process.stdout.write("Hello, " + program.name + "!\n");
+} else { 
+    process.stdout.write("Hello, world!\n");``
+}
